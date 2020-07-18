@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-image: radial-gradient(circle, red 55%,rgb(212, 138, 0));
 }
 
 .container {
@@ -17,6 +18,7 @@ body {
     border-width: 1px;
     width: 100%;
     box-sizing: border-box;
+    background-color: white;
 }
 
 .column {
@@ -26,11 +28,33 @@ body {
 }
 
 #resetBoard {
-    height: 10vh
+    height: 8vh;
+    width: 100%;
+    padding-top: 2vh;
+    box-sizing: border-box;
 }
 
 #grid {
     height: 90vh;
     width: 100vh;
+    margin: auto;
+}
 
+#resetButton {
+    display: block;
+    margin: auto;
+    width: 50vh;
+    height: 4vh;
+    font-size: 16px;
+    box-sizing:border-box;
+    background-color: white;
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: black;
+    transition: 0.2s;
+}
+
+#resetButton:hover {
+    transform: scale(1.2);
+    font-size: 20px;
 }

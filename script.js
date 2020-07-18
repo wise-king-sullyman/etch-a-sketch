@@ -24,8 +24,13 @@ function createColumns(appendToID) {
     }
 };
 
+function getNewBoardSize() {
+    newBoardSize = prompt("Enter number for new board size, e.g. 16 will create a 16x16 board. Sizes over 100 start to get laggy");
+    !newBoardSize? alert("Enter number greater than 0"): resizeBoard()
+}
+
 function resizeBoard() {
-    newBoardSize = prompt("Enter new board Size");
+    
     boardSideLength = newBoardSize;
     let container = document.getElementById('container');
     grid.remove();
@@ -43,8 +48,8 @@ function addEventListeners() {
             e.target.style.backgroundColor = "black";
         });
 });
-    let resetButton = document.getElementById('resetBoard');
-    resetButton.addEventListener("click", resizeBoard);
+    let resetButton = document.getElementById('resetButton');
+    resetButton.addEventListener("click", getNewBoardSize);
 };
 
 createColumns("grid")
