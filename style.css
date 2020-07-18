@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vh;
+
+}
+
+.square {
+    border: solid;
+    border-width: 1px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    height: 100%;
+
+}
+
+#resetBoard {
+    height: 10vh
+}
+
+#grid {
+    height: 90vh;
+    width: 100vh;
+
+}
