@@ -24,4 +24,28 @@ function createColumns(appendToID) {
     }
 };
 
+function resizeBoard() {
+    newBoardSize = prompt("Enter new board Size");
+    boardSideLength = newBoardSize;
+    let container = document.getElementById('container');
+    grid.remove();
+    grid = document.createElement("DIV");
+    grid.id = "grid"
+    document.getElementById("container").appendChild(grid)
+    createColumns("grid")
+    addEventListeners()
+}
+
+function addEventListeners() {
+    let squares = document.querySelectorAll(".square");
+    squares.forEach((square) => {
+        square.addEventListener("mouseenter", function(e) {
+            e.target.style.backgroundColor = "black";
+        });
+});
+    let resetButton = document.getElementById('resetBoard');
+    resetButton.addEventListener("click", resizeBoard);
+};
+
 createColumns("grid")
+addEventListeners()
