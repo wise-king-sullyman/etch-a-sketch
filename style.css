@@ -18,7 +18,7 @@ body {
     border-width: 1px;
     width: 100%;
     box-sizing: border-box;
-    background-color: white;
+    background-color: rgba(255,255,255,1.0);
 }
 
 .column {
@@ -27,34 +27,37 @@ body {
 
 }
 
-#resetBoard {
+#buttonDiv{
+    display: block;
     height: 8vh;
-    width: 100%;
+    width: 60%;
     padding-top: 2vh;
     box-sizing: border-box;
+    margin: auto;
 }
 
 #grid {
     height: 90vh;
     width: 100vh;
     margin: auto;
+    background-color: black;
 }
 
-#resetButton {
-    display: block;
-    margin: auto;
-    width: 50vh;
-    height: 4vh;
-    font-size: 16px;
+button {
+    display: inline-block;
     box-sizing:border-box;
     background-color: white;
     border-radius: 15px;
     border-width: 2px;
     border-color: black;
     transition: 0.2s;
+    height: 4vh;
+    font-size: 16px;
+    width: 20%;
+    margin-right: 4%;
 }
 
-#resetButton:hover {
+button:hover {
     transform: scale(1.2);
-    font-size: 20px;
+    border-color: gold;
 }
