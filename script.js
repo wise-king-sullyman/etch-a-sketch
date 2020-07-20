@@ -1,6 +1,7 @@
 let boardSideLength = 16;
 let grid = document.getElementById("grid");
 let modeSelector = 0; //0 for b&w mode, 1 for rainbow, 2 for greyscale
+let gridLines = 0; //0 for off, 1 for on
 
 function createSquares(appendToID) {
     for(let i=0; i < boardSideLength; i++) {
@@ -78,6 +79,20 @@ function darkenBackground(e) {
     return `rgba(255,255,255,${newAlpha})`
 };
 
+function addOrRemoveGridLines() {
+    squares = document.querySelectorAll('.square')
+    if (!gridLines) {
+        squares.forEach((square) => {
+            square.classList.add('gridLines')
+        })
+        gridLines = 1;
+    }else {
+        squares.forEach((square) => {
+            square.classList.remove('gridLines')
+        })
+        gridLines = 0;
+    }
+}
 let resetButton = document.getElementById('resetButton');
 resetButton.addEventListener("click", getNewBoardSize);
 
@@ -90,7 +105,8 @@ rainbowModeButton.addEventListener("click", function(){modeSelector=1});
 let greyscaleModeButton = document.getElementById('greyscaleMode');
 greyscaleModeButton.addEventListener("click", function(){modeSelector=2});
 
-
+let gridLinesButton = document.getElementById('gridLines');
+gridLinesButton.addEventListener("click", addOrRemoveGridLines)
 
 createGrid("grid")
 addSquareEventListeners()
